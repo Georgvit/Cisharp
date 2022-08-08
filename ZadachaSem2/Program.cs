@@ -11,29 +11,31 @@ int numberC = Convert.ToInt32(Console.ReadLine());
 //Определяем большее число с выводом на консоль
 if (numberA > numberB)
 {
-    if (numberA > numberC){
+    if (numberA > numberC)
+    {
         Console.WriteLine("Число MAX -> " + numberA);
     }
-    else {
+    else
+    {
         Console.WriteLine("Число MAX -> " + numberC);
     }
-    }
-    else 
+}
+else
 {
-    if (numberB > numberC){
+    if (numberB > numberC)
+    {
         Console.WriteLine("Число MAX -> " + numberB);
     }
-    else {
+    else
+    {
         Console.WriteLine("Число MAX -> " + numberC);
     }
-    }
-
+}
 
 if (numberA == numberB)
 {
     if (numberA == numberC)
-{
-    Console.WriteLine("Числа равны ");
-}
-    
+    {
+        Console.WriteLine("Числа равны ");
+    }
 }
