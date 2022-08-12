@@ -39,3 +39,4 @@ if (numberA == numberB)
         Console.WriteLine("Числа равны ");
     }
 }
+   
