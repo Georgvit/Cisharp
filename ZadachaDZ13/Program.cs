@@ -6,13 +6,11 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int ostatok = 10;
 
-//Вычисляем вторую цифру трехзначного числа
+//Вычисляем третью цифру трехзначного числа
 if (ostatok*10 < number){
-
+  
 }
 else
 Console.WriteLine("Нет третьего числа");
 
 
-//int result = number / 10 % 10;
-//Console.WriteLine(result);
