@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+  <script src="script.js">
+  </script>
+    <title>Index page</title>>
+</head>
+
+<body>
+    <h1>Привет ASP.NET Im Geovideveloper </h1>
+    <input class="gradient-button" type="button" value="Нажми меня!" onclick="hi()">
+
+    <div style="padding: 50px;">
+    <ol class="rounded">
+      @{
+        int count = Random.Shared.Next(10, 20);
+        for (int i = 0; i < count; i++)
+        {
+          <li><a href="#">Пункт @(i+1) </a></li>
+        }
+      }
+
+    </ol>
+  </div>
+</body>
+
+</html>
