@@ -23,13 +23,13 @@ int[] array(int num, int x, int y)
 void EvenNumber(int[] array)
 {
     int max = 0;
-    int min = 0;
+    int min = array[0];
 
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > max)
             max = array[i];
-        else
+        else if (array[i] < min)
             min = array[i];
     }
 
@@ -39,7 +39,7 @@ void EvenNumber(int[] array)
 }
 
 //Задаем параметры массива кол-во и диапазон
-int[] newArray = array(5, 0, 10);
+int[] newArray = array(15, 1, 100);
 
 //Выводим массив в виде строки
 
