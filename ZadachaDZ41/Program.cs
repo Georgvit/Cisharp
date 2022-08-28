@@ -10,7 +10,8 @@ void TableOfNumbers()
 {
     Console.WriteLine($"Введите количество эллементов в матрице");
     int matrixLength = Convert.ToInt32(Console.ReadLine());
-    if (matrixLength <= 0) {
+    if (matrixLength <= 0)
+    {
         Console.WriteLine("Значение не может быть меньше или равным нулю ");
         TableOfNumbers();
     }
@@ -28,7 +29,6 @@ void TableOfNumbers()
     {
         if (matrix[i] > 0)
             count++;
-        
     }
 
     Console.WriteLine($"Количество цифр в матрице больше нуля:  {count}");
