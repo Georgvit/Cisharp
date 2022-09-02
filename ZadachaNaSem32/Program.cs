@@ -16,7 +16,6 @@
 
 
 Console.Clear();
-
 //Создаем массив
 
 int[] arrayRandom = new int[12];

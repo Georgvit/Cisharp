@@ -14,17 +14,90 @@
  */
 
 
- void Massif(int[,] array)
+//Метод создания массива
+
+void Massif(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int line = 0; line < array.GetLength(0); line++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int column = 0; column < array.GetLength(1); column++)
         {
-            array[i, j] = new Random().Next(1, 10);
-            Console.Write(array[i, j] + " ");
+            array[line, column] = new Random().Next(1, 100);
+            Console.Write(array[line, column]);
+            if (array[line, column] > 9) Console.Write($" ");
+            else Console.Write($"  ");
         }
         Console.WriteLine();
     }
     Console.WriteLine();
 
 }
+
+//Метод вывода массива без строк и столбцов на пересечении с мин элементом
+void DeleteItem(int[,] array)
+{
+
+    int min = array[0, 0];
+    int lineMinItem = 0;
+    int columnMinItem = 0;
+
+    //Определим минимальный элемент в массиве и на пересечении  каких строк и столбцов
+    // он находится
+
+    for (int line = 0; line < array.GetLength(0); line++)
+    {
+        for (int column = 0; column < array.GetLength(1); column++)
+        {
+
+            if (array[line, column] < min)
+            {
+
+                min = array[line, column];
+                lineMinItem = line;
+                columnMinItem = column;
+            }
+
+        }
+
+    }
+    Console.WriteLine($"min {min} / lineMinItem {lineMinItem} / columnMinItem {columnMinItem}");
+
+    //Вывод матрицы без строки и столбца на пересечении которых находится наименьший элемент
+    for (int line = 0; line < array.GetLength(0); line++)
+    {
+        if (line == lineMinItem) { }
+        else
+        {
+            for (int column = 0; column < array.GetLength(1); column++)
+            {
+                if (column == columnMinItem)
+                {
+                    if (column == array.GetLength(1) - 1) { break; }
+                    else { column = column + 1; }
+
+                    Console.Write(array[line, column]);
+
+                    if (array[line, column] > 9) Console.Write($" ");
+                    else Console.Write($"  ");
+                }
+                else
+                {
+                    Console.Write(array[line, column]);
+                    if (array[line, column] > 9) Console.Write($" ");
+                    else Console.Write($"  ");
+                }
+
+            }
+            Console.WriteLine();
+
+        }
+
+    }
+
+}
+
+//Запускаем программу
+
+int[,] arr = new int[5, 5];
+Massif(arr);
+DeleteItem(arr);
