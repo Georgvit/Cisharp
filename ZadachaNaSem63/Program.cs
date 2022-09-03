@@ -1,26 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿/* Задача 63: Задайте значение N. 
+Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+N = 5 -> "1, 2, 3, 4, 5"
+N = 6 -> "1, 2, 3, 4, 5, 6" */
 
+// Запрос точек отсчета у пользователя
 
-Console.WriteLine("Введите число M");
-int numberM = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите число N");
+Console.WriteLine("Введите конечное число N");
 int numberN = Convert.ToInt32(Console.ReadLine());
 
 
 
+//Рекурсивный метод вывода всех натуральных чисел в промежутке от 1 до N
+void NaturalOne(int numberTwo)
+{
 
-int Natural (int numberOne, int numberTwo){
+    if (numberTwo != 1)
+    {
 
-        if (numberTwo <= numberOne){
-        
-        Console.Write($" {numberTwo} ");
-        
-       numberTwo++;
-    } else {Environment.Exit(0);}
-    return numberTwo = numberTwo + Natural(numberOne, numberTwo);
+        NaturalOne(numberTwo - 1);
+    }
     
-    
+    Console.Write($" {numberTwo} ");
+
 }
 
-Natural(numberN, numberM );
+//Вызов метода
+NaturalOne(numberN);
+
